@@ -35,4 +35,6 @@ so inject looks like:
 
 the callback in this case is an array of objects of the InjectionResult (https://developer.chrome.com/docs/extensions/reference/scripting/#type-InjectionResult)
 
+for more see https://developer.chrome.com/docs/extensions/reference/scripting/
+
 
