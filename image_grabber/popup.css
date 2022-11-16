@@ -6,10 +6,10 @@ body {
 button {
   width: 80%;
   color: white;
-  background: #f6f6f6;
+  background: #000000;
   border-width: 0px;
   border-radius: 20px;
   padding: 10px;
-  font-weight: bold;
+  font-weight: 300;
   cursor: pointer;
 }
