@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Image Grabber",
+  "description": "Extract all images from current web page",
+  "version": "1.0",
+  "icons": {},
+  "action": {},
+  "permissions": [],
+  "background": {}
+}
