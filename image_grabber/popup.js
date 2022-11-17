@@ -40,10 +40,7 @@ function grabImages() {
 }
 
 /**
- * Executed after all grabImages() calls finished on
- * remote page
- * Combines results and copy a list of image URLs
- * to clipboard
+ * Combines results in a string and copies the URLs to clipboard
  *
  * @param {[]InjectionResult} frames Array
  * of grabImage() function execution results
@@ -60,11 +57,15 @@ function onResult(frames) {
   const imageUrls = frames
     .map(frame => frame.result)
     .reduce((r1, r2) => r1.concat(r2));
-  // Copy to clipboard a string of image URLs, delimited by
-  // carriage return symbol
-  window.navigator.clipboard.writeText(imageUrls.join("\n")).then(() => {
-    // close the extension popup after data
-    // is copied to the clipboard
-    window.close();
+
+  openImagesPage(imageUrls);
+}
+
+function openImagesPage(urls) {
+  chrome.tabs.create({ url: "page.html", selected: false }, tab => {
+    // * Send `urls` array to this page
+    chrome.tabs.sendMessage(tab.id, urls, function(response) {
+      chrome.tabs.update(tab.id, { active: true });
+    });
   });
 }
