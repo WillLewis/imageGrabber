@@ -1,5 +1,13 @@
 # imageGrabber
 
+
+**Summary**
+"GRAB NOW" button. When a user presses this button, the extension injects a script to a web page, opened on a current browser tab, which grabs all <img> tags from this page, extract URLs of all images, and returns it back to the extension.
+
+Next it opens a web page with a list of images and a "Download" button allowing the user to select which images to download. 
+
+Finally, when pressing the "Download" button on that page, a script will download all selected images, compress them to an archive with the name images.zip, and will prompt the user to save this archive to a local computer.
+
 **Get information about active browser tab**
 grab button uses chrome.tabs.query(queryObject,callback) which gets all the tabs that have specified properties, and returns an array of those tabs in a callback which is a function that does something when query complete
 
